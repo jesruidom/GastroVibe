@@ -1,25 +1,25 @@
 :root {
     --color-fondo-principal: hsl(0, 0%, 96%, 0.8); /* Blanco Humo */
-    --color-texto-principal: hsl(0, 0%, 0%);  /* Negro */
+    --color-texto-principal: hsl(0, 0%, 0%); /* Negro */
     --color-botones-destacados: hsl(77, 50%, 53%); /* Verde Lima */
     --color-enlaces-interactivos: hsl(210, 100%, 56%); /* Azul Eléctrico */
     --color-bordes-separadores: hsl(0, 0%, 44%); /* Gris Acero */
+    --fuente-general: 'Lato', sans-serif; /* Fuente general para todo el texto */
+    --tamano-texto: 16px; /* Tamaño de texto general */
 }
 
-
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: lato;
+    font-family: var(--fuente-general);
+    font-size: var(--tamano-texto);
 }
 
-body{
-    /*background-color: var(--color-fondo-principal);*/
+body {
     background-image: url(/media/img/fondo.jpg);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
-
     color: var(--color-texto-principal);
     display: flex;
     flex-direction: column;
@@ -30,22 +30,22 @@ body{
 /*                           Parte del menu                             */
 /************************************************************************/
 
-nav{
+nav {
     background-color: var(--color-texto-principal);
     position: fixed;
     width: 100%;
     height: 50px;
-    z-index: 1000;              /* Asegura que el nav esté encima del contenido */    
+    z-index: 1000; /* Asegura que el nav esté encima del contenido */
 }
 
-.menu-horizontal{
+.menu-horizontal {
     height: 100%;
     list-style: none;
     display: flex;
     justify-content: space-around;
 }
 
-.menu-horizontal li{
+.menu-horizontal li {
     display: flex;
     align-items: center;
     justify-content: center; /* Centra el contenido dentro del botón */
@@ -56,35 +56,49 @@ nav{
     padding: 0;
 }
 
-.menu-horizontal > li:hover{    /*Cuando estamos encima de un elemento del menu horizontal*/
+.menu-horizontal > li:hover { /*Cuando estamos encima de un elemento del menu horizontal*/
     background-color: #527200;
     border: 2px black solid;
 }
 
-.menu-vertical{
+.menu-vertical {
     display: none;
-    position: absolute;         /* Posiciona el submenu respecto al elemento padre */
-    top: 100%;                  /* Lo coloca justo debajo del elemento padre */
-    left: 0;                    /* Lo alinea a la izquierda del elemento padre */
+    position: absolute; /* Posiciona el submenu respecto al elemento padre */
+    top: 100%; /* Lo coloca justo debajo del elemento padre */
+    left: 0; /* Lo alinea a la izquierda del elemento padre */
     list-style: none;
     width: 200px;
     background-color: rgb(0, 0, 0, 0.5);
-    z-index: 1000;              /* Asegura que el submenu esté encima de otros contenidos */
+    z-index: 1000; /* Asegura que el submenu esté encima de otros contenidos */
 }
 
-.menu-horizontal li:hover .menu-vertical{
+.menu-horizontal li:hover .menu-vertical {
     display: block;
 }
 
-.menu-vertical li:hover{
+.menu-vertical li:hover {
     background-color: #527200;
     border: 2px black solid;
 }
 
-a{
+.menu-horizontal li a {
+    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
+    align-items: center; /* Centra verticalmente el texto y la imagen */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: black; /* Ajusta el color del texto */
+    font-weight: bold;
+}
+
+.menu-horizontal li a img.icono-menu {
+    width: 27px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 8px; /* Espacio entre la imagen y el texto */
+}
+
+a {
     display: block;
     color: black;
-    padding: 15px, 15px, 15px, 20px;
+    padding: 15px 20px;
     text-decoration: none;
 }
 
@@ -101,87 +115,116 @@ a{
 /*                        Parte del contenido                           */
 /************************************************************************/
 
-.contenido{
+.contenido {
     display: flex;
     flex-direction: column;
     margin: 65px;
     padding: 4%;
-    gap: 20px;
-
+    gap: 30px;
     background-color: var(--color-fondo-principal);
 }
 
-.contenido img{
-    width: 500px;
+.contenido img {
+    width: 50%;
 }
 
-.logo-principal{
+.logo-principal {
     display: flex;
     justify-content: center;
 }
 
-.logo-principal img{
+.logo-principal img {
     border-radius: 8px;
+    width: 650px;
 }
 
-.contenido-principal{
+.descripcion-principal{
     display: flex;
-    align-items: center;
-    gap: 1%;
+    flex-direction: column;
+    gap: 15px;
+    text-align: justify;
 }
 
-.contenido-barra{
+.contenido-cocina,
+.contenido-barra,
+.contenido-bodega {
     display: flex;
-    align-items: center;
-    gap: 1%;
+    align-items: stretch; /* Asegura que todos los elementos en el contenedor tengan la misma altura */
 }
 
-.contenido-bodega{
+.contenido-cocina img,
+.contenido-barra img,
+.contenido-bodega img {
+    width: 50%; /* Ajusta el ancho de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.parrafos-cocina,
+.parrafos-barra,
+.parrafos-bodega {
     display: flex;
-    align-items: center;
-    gap: 1%;
+    flex-direction: column;
+    background-color: var(--color-botones-destacados);
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    padding: 20px; /* Espacio interno para el texto */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho y alto del elemento */
 }
 
-.slider{
+.contenido-cocina p,
+.contenido-barra p,
+.contenido-bodega p {
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 10px; /* Espacio entre párrafos */
+}
+
+.parrafos-barra .resaltado {
+    color: rgb(255, 0, 221);
+    font-weight: inherit; /* Hereda el peso de fuente del párrafo */
+    font-size: inherit; /* Hereda el tamaño de fuente del párrafo */
+}
+
+.parrafos-bodega .resaltado {
+    color: rgb(17, 0, 255);
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+.slider {
     width: 580px;
     height: auto;
-    margin: 0 auto 0;    /*margin por arriba 50px, centrado y sin margin abajo*/
+    margin: 0 auto; /* Centrando el slider */
     overflow: hidden;
 }
 
-.slider ul{
+.slider ul {
     display: flex;
     padding: 0;
     width: 400%;
-
     animation: slider 15s infinite alternate ease-in-out;
 }
 
-.slider li{
+.slider li {
     list-style: none;
     width: 100%;
 }
 
-.slider img{
+.slider img {
     width: 100%;
 }
 
-footer{
+footer {
     display: flex;
     background-color: brown;
     justify-content: space-between;
 }
 
-@keyframes slider{
-    0% {margin-left: 0%;}
-    20% {margin-left: 0%;}
-
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    95% {margin-left: -300%;}
+@keyframes slider {
+    0%, 20% { margin-left: 0%; }
+    25%, 45% { margin-left: -100%; }
+    50%, 70% { margin-left: -200%; }
+    75%, 95% { margin-left: -300%; }
 }
