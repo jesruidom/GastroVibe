@@ -1,9 +1,9 @@
 :root {
-    --color-fondo-principal: #F5F5F5; /* Blanco Humo */
-    --color-texto-principal: #333333;  /* Negro Carbono */
-    --color-botones-destacados: #A1C349; /* Verde Lima */
-    --color-enlaces-interactivos: #1E90FF; /* Azul Eléctrico */
-    --color-bordes-separadores: #707070; /* Gris Acero */
+    --color-fondo-principal: hsl(0, 0%, 96%, 0.8); /* Blanco Humo */
+    --color-texto-principal: hsl(0, 0%, 0%);  /* Negro */
+    --color-botones-destacados: hsl(77, 50%, 53%); /* Verde Lima */
+    --color-enlaces-interactivos: hsl(210, 100%, 56%); /* Azul Eléctrico */
+    --color-bordes-separadores: hsl(0, 0%, 44%); /* Gris Acero */
 }
 
 
@@ -53,6 +53,7 @@ nav{
     position: relative; /* Necesario para el posicionamiento del submenu */
     flex: 1; /* Asegura que todos los elementos tengan el mismo tamaño */
     text-align: center; /* Centra el texto dentro del botón */
+    padding: 0;
 }
 
 .menu-horizontal > li:hover{    /*Cuando estamos encima de un elemento del menu horizontal*/
@@ -87,6 +88,15 @@ a{
     text-decoration: none;
 }
 
+.logo-menu {
+    width: 100%; /* Ocupa todo el espacio disponible en su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 50px; /* Ajusta este valor al alto de tus otros <li> si es necesario */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin distorsionarla */
+    display: block; /* Asegura que la imagen sea tratada como un bloque */
+    border-radius: 8px;
+}
+
 /************************************************************************/
 /*                        Parte del contenido                           */
 /************************************************************************/
@@ -103,6 +113,15 @@ a{
 
 .contenido img{
     width: 500px;
+}
+
+.logo-principal{
+    display: flex;
+    justify-content: center;
+}
+
+.logo-principal img{
+    border-radius: 8px;
 }
 
 .contenido-principal{
