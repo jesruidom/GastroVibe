@@ -130,6 +130,28 @@ nav a {
     background-color: var(--color-fondo-principal);
 }
 
+#titulo {
+    text-align: center;
+}
+
+.descripcion-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.descripcion-principal div h3{
+    margin-bottom: 10px;
+}
+
+.descripcion-principal div p {
+    margin-left: 2%;
+}
+
+.descripcion-principal div ul {
+    margin-left: 4%;
+}
+
 
 
 /************************************************************************/
