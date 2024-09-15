@@ -134,6 +134,12 @@ nav a {
     width: 50%;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .logo-principal {
     display: flex;
     justify-content: center;
@@ -187,13 +193,19 @@ nav a {
     margin-bottom: 10px; /* Espacio entre párrafos */
 }
 
-.parrafos-barra .resaltado {
+.resaltado-cocina {
+    color: rgb(255, 0, 0);
+    font-weight: inherit; /* Hereda el peso de fuente del párrafo */
+    font-size: inherit; /* Hereda el tamaño de fuente del párrafo */
+}
+
+.resaltado-barra {
     color: rgb(255, 0, 221);
     font-weight: inherit; /* Hereda el peso de fuente del párrafo */
     font-size: inherit; /* Hereda el tamaño de fuente del párrafo */
 }
 
-.parrafos-bodega .resaltado {
+.resaltado-bodega {
     color: rgb(17, 0, 255);
     font-weight: inherit;
     font-size: inherit;
@@ -290,6 +302,23 @@ footer {
 /*                        Parte aviso cookies                           */
 /************************************************************************/
 
+#contenedor-aviso-cookies {
+    position: fixed;
+    bottom: 20px; /* Se adhiere a la parte inferior */
+    left: 0; /* Empieza desde el borde izquierdo */
+    width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+    height: 200px;
+    backdrop-filter: blur(10px); 
+    padding: 20px;
+    border-radius: 0; /* Elimina el borde redondeado para que ocupe todo el ancho */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Sombras suaves */
+    z-index: 1001; /* Por encima de todo el contenido */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+
 .aviso-cookies {
     position: fixed;
     bottom: 20px;
@@ -347,10 +376,15 @@ footer {
     text-decoration: underline;
 }
 
-.oculta-cookies {
-    display: none;
+.aviso-cookies div {
+    display: flex;
+    justify-content: space-evenly;
 }
 
+/* Si quieres ocultar los elementos completamente con una clase */
+.oculta-cookies, .oculta-contenedor-cookies {
+    display: none !important; /* Fuerza el ocultamiento */
+}
 
 /************************************************************************/
 /*                               Animaciones                            */

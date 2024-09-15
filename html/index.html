@@ -82,8 +82,8 @@
             <div class="contenido-cocina">
                 <div class="parrafos-cocina">
                     <p>LAS MEJORES COCINAS</p>
-                    <P>LOS MEJORES CHEFFS</p>
-                    <p style="color: white;">¿PODRÁS RESISTIRTE?</p>
+                    <P>LOS MEJORES CHEFS</p>
+                    <p><span class="resaltado-cocina">¿PODRÁS RESISTIRTE?</span></p>
                 </div>
                 <img src="/media/img/cocina.png" alt="foto-cocina">
             </div>
@@ -91,16 +91,16 @@
             <div class="contenido-barra">
                 <img src="/media/img/barra.png" alt="foto-barra">
                 <div class="parrafos-barra">
-                    <p>LOS CÓCTELES MÁS <span class="resaltado">MODERNOS</span></p>
-                    <p>LOS BARTENDERS MÁS <span class="resaltado">CREATIVOS</span></p>
+                    <p>LOS CÓCTELES MÁS <span class="resaltado-barra">MODERNOS</span></p>
+                    <p>LOS BARTENDERS MÁS <span class="resaltado-barra">CREATIVOS</span></p>
                     <p>¿TE ATREVES A PROBARLOS?</p>
                 </div>
             </div>
     
             <div class="contenido-bodega">
                 <div class="parrafos-bodega">
-                    <p>VINOS <span class="resaltado">EXCLUSIVOS</span></p>
-                    <p>COLECCIONES <span class="resaltado">PREMIUM</span></p>
+                    <p>VINOS <span class="resaltado-bodega">EXCLUSIVOS</span></p>
+                    <p>COLECCIONES <span class="resaltado-bodega">PREMIUM</span></p>
                     <p>¿LISTO PARA PROBARLOS?</p>
                 </div>
                 <img src="/media/img/bodega.png" alt="foto-bodega">
@@ -114,11 +114,13 @@
                 <li><img src="/media/img/plato3.jpg" alt="plato 3"></li>
                 <li><img src="/media/img/plato4.jpg" alt="plato 4"></li>
             </ul>
-
+        
             <div id="contenedor-boton-slider">
                 <button type="button" id="boton-carta"><a href="#">Consulta nuestra carta!</a></button>
             </div>            
         </div>
+        
+        
     </div>
 
     <footer>
@@ -141,12 +143,19 @@
         </div>
     </footer>
 
-    <div class="aviso-cookies" id="aviso-cookies">
-        <h3 class="titulo-cookies">Aviso Cookies</h3>
-        <p class="texto-cookies">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
-        <button class="acepta-cookies" id="boton-acepta-cookies">De acuerdo</button>
-        <a href="/html/cookies.html">Aviso de cookies</a>
-    </div>    
+    <div id="contenedor-aviso-cookies">
+        <div class="aviso-cookies" id="aviso-cookies">
+            <h3 class="titulo-cookies">Aviso Cookies</h3>
+            <p class="texto-cookies">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+            <button class="acepta-cookies" id="boton-acepta-cookies">De acuerdo</button>
+            
+            <div>
+                <a href="/html/politicaPrivacidad.html">Política de privacidad</a>
+                <a href="/html/avisoLegal.html">Aviso legal</a>
+                <a href="/html/cookies.html">Aviso de cookies</a>
+            </div>        
+        </div> 
+    </div>
 
 </body>
 </html>
