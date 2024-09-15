@@ -211,6 +211,22 @@ main{
     font-size: inherit;
 }
 
+#contenedor-map-reservas {
+    display: flex;
+    justify-content: space-around;    
+}
+
+#titulo-map{
+    text-align: center;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#map {
+    width: 400px;
+    height: 400px;
+}
+
 /************************************************************************/
 /*                           Parte del slider                           */
 /************************************************************************/

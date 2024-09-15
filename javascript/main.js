@@ -18,9 +18,18 @@ const aceptaCookies = () => {
     console.log(`Cookie creada: Página - ${nombrePagina}, Fecha y Hora - ${fechaAceptacion}`);
 };
 
+const mostrarMapa = () => {
+    var latitud = 37.3936676;
+    var longitud = -5.9929712;
+
+    var mapa = document.getElementById('map');
+    mapa.innerHTML = '<iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=' + (longitud - 0.01) + '%2C' + (latitud - 0.01) + '%2C' + (longitud + 0.01) + '%2C' + (latitud + 0.01) + '&amp;layer=mapnik&amp;marker=' + latitud + '%2C' + longitud + '&amp;zoom=15"></iframe>';
+}
 
 const inicializar = () => {
     console.log('Cargada pagina principal');
+    mostrarMapa();
+    console.log('Se ha cargado el mapa');
 
     // Colores a alternar
     const colores = ['rgb(255, 0, 0)', 'rgb(255, 0, 221)', 'rgb(17, 0, 255)'];
