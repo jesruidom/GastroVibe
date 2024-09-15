@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GastroVibe</title>
+    <link rel="icon" href="/media/img/GastroVibe-logo-redondo.png" type="image/png">
+
     <link rel="stylesheet" href="/css/index.css">
+    <script src="/javascript/main.js"></script>
 </head>
-<body>
+<body onload="inicializar()">
     <nav>
         <ul class="menu-horizontal">
             <li>
@@ -116,13 +119,6 @@
                 <button type="button" id="boton-carta"><a href="#">Consulta nuestra carta!</a></button>
             </div>            
         </div>
-
-        <div class="aviso-cookies">
-            <h3 class="titulo-cookies">Aviso Cookies</h3>
-            <p class="texto-cookies">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
-            <button class="acepta-cookies" id="boton-acepta-cookies">De acuerdo</button>
-            <a href="#">Aviso de cookies</a>
-        </div>
     </div>
 
     <footer>
@@ -135,6 +131,7 @@
         </div>
         <div class="copyright">
             <aside>2024 GastroVibe © Todos los derechos reservados - v2.1.12</aside>
+            <aside><a href="/html/cookies.html">Política de privacidad  - Aviso legal - Configuración de cookies</a></aside>
         </div>
 
         <div class="social">
@@ -143,6 +140,13 @@
             <a href="https://facebook.com"><img src="/media/img/logo-facebook.png" alt="logo-facebook"></a>         
         </div>
     </footer>
+
+    <div class="aviso-cookies" id="aviso-cookies">
+        <h3 class="titulo-cookies">Aviso Cookies</h3>
+        <p class="texto-cookies">Utilizamos cookies propias y de terceros para mejorar nuestros servicios.</p>
+        <button class="acepta-cookies" id="boton-acepta-cookies">De acuerdo</button>
+        <a href="/html/cookies.html">Aviso de cookies</a>
+    </div>    
 
 </body>
 </html>
