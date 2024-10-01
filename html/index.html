@@ -124,33 +124,78 @@
             <div id="contenedor-map">
                 <p id="titulo-map">¿DONDE ENCONTRARNOS?</p>
                 <div id="map"></div>
-            </div>
-            
+            </div>            
 
             <div class="formulario-container">
-                <h2>Formulario de Contacto</h2>
-                <form action="#" method="post" id="formulario-contacto">
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
+                
+                <form action="https://formsubmit.co/gastroviberestaurant@gmail.com" method="POST" id="formulario-reserva">
+                    <fieldset>
+                        <legend>¡Haz tu reserva!</legend>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="Nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="Telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dia">Día y hora:</label>
+                            <input type="date" id="fecha" name="Fecha" required>
+                            <select id="hora">
+                                <!-- Horas medio día -->
+                                <option value="13:00">13:00</option>
+                                <option value="13:15">13:15</option>
+                                <option value="13:30">13:30</option>
+                                <option value="13:45">13:45</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:15">14:15</option>
+                                <option value="14:30">14:30</option>
+                                <option value="14:45">14:45</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:15">15:15</option>
+                                <option value="15:30">15:30</option>
+                                <option value="15:45">15:45</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:15">16:15</option>
+                                <option value="16:30">16:30</option>
+                                
+                                <!-- Horas noche -->
+                                <option value="20:00">20:00</option>
+                                <option value="20:15">20:15</option>
+                                <option value="20:30">20:30</option>
+                                <option value="20:45">20:45</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:15">21:15</option>
+                                <option value="21:30">21:30</option>
+                                <option value="21:45">21:45</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:15">22:15</option>
+                                <option value="22:30">22:30</option>
+                                <option value="22:45">22:45</option>
+                                <option value="23:00">23:00</option>
+                            </select>
+                        
+                            <input type="text" name="Hora" id="diaHora" readonly hidden>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="zona">Zona:</label>
+                        <select id="zona" required>
+                            <!-- Horas medio día -->
+                            <option value="Barra">Barra</option>
+                            <option value="Salon principal">Salón principal</option>
+                            <option value="Terraza">Terraza</option>
+                            <option value="Experiencia bodega">Experiencia bodega</option>
+                        </select>
                     
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefono">Teléfono:</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                    </div>
-                    
-                    <button type="submit">Enviar</button>
+                        <input type="text" name="Zona" id="zonaReserva" readonly hidden>
+                        </div>
+                        
+                        <button type="submit">Enviar</button>
+                    </fieldset>
                 </form>
             </div>
         </div>
@@ -167,7 +212,7 @@
         </div>
         <div class="copyright">
             <aside>2024 GastroVibe © Todos los derechos reservados - v2.1.12</aside>
-            <aside><a href="/html/politicaPrivacidad.html">Política de privacidad</a>  - <a href="/html/avisoLegal.html">Aviso legal</a> - <a href="/html/cookies.html">Configuración de cookies</a></aside>
+            <aside><a href="/html/politicaPrivacidad.html">Política de privacidad</a> | <a href="/html/avisoLegal.html">Aviso legal</a> | <a href="/html/cookies.html">Configuración de cookies</a></aside>
         </div>
 
         <div class="social">

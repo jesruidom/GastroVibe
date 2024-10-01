@@ -67,4 +67,29 @@ const inicializar = () => {
 
     // Agrega el evento al botón de aceptar cookies
     document.getElementById("boton-acepta-cookies").addEventListener("click", aceptaCookies);
+
+    // Referencia al input y al select
+    const horaSelect = document.getElementById('hora');
+    const zonaSelect = document.getElementById('zona');
+    const diaHoraInput = document.getElementById('diaHora');
+    const zonaInput  = document.getElementById('zonaReserva');
+
+    // Función para actualizar el input con la fecha y hora seleccionadas
+    function actualizarHoraYZona() {
+        const hora = horaSelect.value;
+        const zona = zonaSelect.value;
+        
+        // Si se ha seleccionado una fecha y una hora, actualizar el input
+        if (hora) {
+            diaHoraInput.value = `${hora}`;
+        }
+
+        if (zona) {
+            zonaInput.value = `${zona}`
+        }
+    }
+
+    // Escuchar el cambio en la fecha y la hora
+    horaSelect.addEventListener('change', actualizarHoraYZona);
+    zonaSelect.addEventListener('change', actualizarHoraYZona);
 };
