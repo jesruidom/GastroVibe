@@ -18,6 +18,8 @@
 
 html, body {
     overflow-x: hidden; /* Asegura que no haya desbordamiento horizontal en toda la página */
+    height: 100%;
+    margin: 0;
 }
 
 
@@ -129,10 +131,10 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin:  65px;
     padding: 4%;
     background-color: var(--color-fondo-principal);
-    min-height: 100%;
+    flex-grow: 1;
 }
 
 main {
@@ -142,6 +144,7 @@ main {
     flex-wrap: wrap; /* Permitir que los contenedores se apilen en pantallas pequeñas */
     width: 100%;
     max-width: 1200px; /* Ancho máximo para el diseño */
+    height: 100%;
 }
 
 h1 {
