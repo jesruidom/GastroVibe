@@ -16,6 +16,11 @@
     font-size: var(--tamano-texto);
 }
 
+html, body {
+    overflow-x: hidden; /* Asegura que no haya desbordamiento horizontal en toda la página */
+}
+
+
 body {
     background-image: url(/media/img/fondo.jpg);
     background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
@@ -36,7 +41,7 @@ nav {
     position: fixed;
     width: 100%;
     height: 50px;
-    z-index: 1000; /* Asegura que el nav esté encima del contenido */
+    z-index: 1000; /* Mantiene el nav encima del contenido */
     background-color: var(--color-botones-destacados);
 }
 
@@ -50,11 +55,11 @@ nav {
 .menu-horizontal li {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el contenido dentro del botón */
+    justify-content: center;
     background-color: var(--color-botones-destacados);
-    position: relative; /* Necesario para el posicionamiento del submenu */
-    flex: 1; /* Asegura que todos los elementos tengan el mismo tamaño */
-    text-align: center; /* Centra el texto dentro del botón */
+    position: relative;
+    flex: 1;
+    text-align: center;
     padding: 0;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
@@ -123,35 +128,80 @@ nav a {
 .contenido {
     display: flex;
     flex-direction: column;
-    margin: 65px;
+    align-items: center;
+    margin: 0 auto;
     padding: 4%;
-    gap: 30px;
     background-color: var(--color-fondo-principal);
+    min-height: 100%;
 }
 
-#titulo {
-    text-align: center;
+main {
+    display: flex;
+    gap: 15px; /* Reducir la separación entre los contenedores */
+    justify-content: center; /* Centrar los contenedores horizontalmente */
+    flex-wrap: wrap; /* Permitir que los contenedores se apilen en pantallas pequeñas */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el diseño */
 }
 
-.descripcion-principal {
+h1 {
+    text-align: center; /* Centrar el texto del encabezado */
+    margin: 20px 0; /* Espaciado superior e inferior */
+    font-size: 1.7rem; /* Tamaño del texto */
+}
+
+.contenedor-1, .contenedor-2 {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    max-width: 48%; /* Ajustar el ancho para hacer más grandes los contenedores */
+    text-align: center; /* Centrar el texto dentro de los contenedores */
+    flex-grow: 1; /* Permitir que se expandan proporcionalmente */
 }
 
-.descripcion-principal div h3{
-    margin-bottom: 10px;
+.especialidad-1,
+.especialidad-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 5px;
 }
 
-.descripcion-principal div p {
-    margin-left: 2%;
+.contenedor-1 img, .contenedor-2 img {
+    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantener la proporción de aspecto */
+    max-height: 350px; /* Límite uniforme para la altura */
+    aspect-ratio: 16 / 9; /* Mantener una proporción uniforme entre ancho y alto */
+    object-fit: cover; /* Ajustar la imagen para llenar el espacio */
+    border-radius: 5px; /* Añadir bordes redondeados opcionales */
 }
 
-.descripcion-principal div ul {
-    margin-left: 4%;
+.contenedor-1 img:hover, 
+.contenedor-2 img:hover{
+    cursor: pointer; /* Cambia el cursor a una mano */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+    transition: transform 0.3s ease; /* Suaviza el efecto */
 }
 
 
+/* Estilos adicionales para el menú cuando se muestra */
+#menu-espanol,
+#menu-asiatico {
+    margin-left: 20px;
+}
+
+#menu-espanol ul,
+#menu-asiatico ul {
+    margin: 5px 0 0 20px;
+    padding-left: 0;
+    list-style-position: inside;
+    text-align: left; /* Elimina el text-align: center solo para los elementos dentro del ul */
+}
+
+/* Ocultar el menú por defecto */
+.oculto {
+    display: none;
+}
 
 /************************************************************************/
 /*                           Parte del footer                           */
@@ -184,6 +234,7 @@ footer {
 .social img{
     width: 50px;
 }
+
 
 /************************************************************************/
 /*              Estilos Responsivos: Usando @media screen               */
@@ -223,6 +274,63 @@ footer {
         margin: 0;
     }
 
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }    
+
+    main h1 {
+        text-align: center;
+        font-size: var(--tamano-texto);
+    }
+
+    .contenedor-1, .contenedor-2 {
+        max-width: 100%;
+    }
+
+    /* Asegúrate de que los contenedores se ajusten al diseño responsive */
+    .especialidad-1,
+    .especialidad-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: auto; /* Ajusta la altura proporcionalmente */
+        gap: 10px;
+    }
+
+    /* Estilo para las imágenes dentro de los contenedores */
+    .especialidad-1 img,
+    .especialidad-2 img {
+        width: 100%; 
+        height: auto; /* Mantiene la proporción original de la imagen */
+        object-fit: cover; /* Ajusta el contenido si la proporción es diferente */
+        max-width: 300px; /* Opcional: Establece un ancho máximo para limitar el tamaño */
+        border: 1px solid #ccc; 
+        border-radius: 5px; 
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    /* Ocultar el menú por defecto */
+    .oculto {
+        display: none;
+    }
+
+    /* Estilos adicionales para el menú cuando se muestra */
+    #menu-espanol,
+    #menu-asiatico {
+        margin-left: 20px;
+    }
+
+    #menu-espanol ul,
+    #menu-asiatico ul {
+        margin-left: 20px;
+    }
+
+
     footer {
         display: flex;
         flex-direction: column;
@@ -236,3 +344,5 @@ footer {
         justify-content: space-evenly;
     }
 }
+
+

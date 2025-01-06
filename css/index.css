@@ -77,7 +77,6 @@ nav {
     left: 0; /* Lo alinea a la izquierda del elemento padre */
     list-style: none;
     width: 200px;
-    background-color: rgb(0, 0, 0, 0.5);
     z-index: 1000; /* Asegura que el submenu esté encima de otros contenidos */
     border-radius: 5px;
 }
