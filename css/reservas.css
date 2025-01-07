@@ -16,9 +16,10 @@
     font-size: var(--tamano-texto);
 }
 
-html, body{
-    overflow-x: hidden;
+html, body {
+    overflow-x: hidden; /* Asegura que no haya desbordamiento horizontal en toda la página */
 }
+
 
 body {
     background-image: url(/media/img/fondo.jpg);
@@ -137,29 +138,174 @@ nav a {
     background-color: var(--color-fondo-principal);
 }
 
-#titulo {
+#contenedor-map-reservas {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;   
+    gap: 50px;
+}
+
+#contenedor-map{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#titulo-map{
+    text-align: center;
+    font-weight: bold;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
     text-align: center;
 }
 
-.descripcion-principal {
+.encabezado-mapa h1{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.mapa-interactivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid var(--color-hover-botones);
+    border-radius: 5px;
+}
+
+.columna {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.descripcion-principal div h3{
-    margin-bottom: 10px;
+.cocina, .mesa-redonda, .mesa-cuadrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: #b0b0b0;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    border: 1px solid;
 }
 
-.descripcion-principal div p {
-    margin-left: 2%;
+.mesa-redonda {
+    border-radius: 50%;
+    background-color: #bd7858;
 }
 
-.descripcion-principal div ul {
-    margin-left: 4%;
+.mesa-cuadrada {
+    width: 80px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: #dd845b;
+}
+
+#precio-mesa {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 
+.cocina:hover, .mesa-redonda:hover, .mesa-cuadrada:hover {
+    transform: scale(1.05);
+}
+
+.tooltip {
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none; /* Evita que el tooltip interfiera con otros elementos */
+}
+
+/************************************************************************/
+/*                    Diseño de formulario reserva                      */
+/************************************************************************/
+
+.formulario-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+    border: 2px solid var(--color-hover-botones);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el formulario */
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-texto-principal);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333; /* Color para el texto de las etiquetas */
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--color-botones-destacados);
+    outline: none;
+    background-color: #fff;
+}
+
+button {
+    background-color: var(--color-botones-destacados); /* Ajusta según tu paleta de colores */
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid var(--color-hover-botones);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff6600; /* Color de hover ajustable */
+}
 
 /************************************************************************/
 /*                           Parte del footer                           */
@@ -231,16 +377,69 @@ footer {
         margin: 0;
     }
 
+    #contenedor-map-reservas {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    /* Hacer que el contenedor de las mesas y cocinas sea más flexible */
+    .contenedor-mapa-interactivo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mapa-interactivo {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    .formulario-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    fieldset {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
     footer {
         display: flex;
         flex-direction: column;
         gap: 10px;
         width: 100vw;
     }
-
+    
     .social {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
     }
 }
+
+
+

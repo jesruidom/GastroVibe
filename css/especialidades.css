@@ -55,18 +55,18 @@ nav {
 }
 
 .menu-horizontal li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Flexbox en el contenedor */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    text-align: center;
     background-color: var(--color-botones-destacados);
     position: relative;
     flex: 1;
-    text-align: center;
     padding: 0;
     transition: background-color 0.3s, transform 0.3s;
     border-radius: 5px;
-    transition: transform 0.3s ease;
 }
+
 
 .menu-horizontal > li:hover { /*Cuando estamos encima de un elemento del menu horizontal*/
     background-color: var(--color-hover-botones);
@@ -94,12 +94,16 @@ nav {
 }
 
 .menu-horizontal li a {
-    display: flex; /* Utiliza flexbox para alinear los elementos en línea */
-    align-items: center; /* Centra verticalmente el texto y la imagen */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: black; /* Ajusta el color del texto */
+    display: flex; /* Flexbox dentro del enlace */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    width: 100%; /* Enlace ocupa todo el ancho del <li> */
+    height: 100%; /* Enlace ocupa todo el alto del <li> */
+    text-decoration: none; /* Sin subrayado */
+    color: black; /* Color del texto */
     font-weight: bold;
 }
+
 
 .menu-horizontal li a img.icono-menu {
     width: 27px; /* Ajusta el tamaño de la imagen según tus necesidades */
