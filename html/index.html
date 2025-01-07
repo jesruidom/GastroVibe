@@ -126,8 +126,7 @@
                 <div id="map"></div>
             </div>            
 
-            <div class="formulario-container">
-                
+            <div class="formulario-container">            
                 <form action="https://formsubmit.co/gastroviberestaurant@gmail.com" method="POST" id="formulario-reserva">
                     <fieldset>
                         <legend>¡Haz tu reserva!</legend>
@@ -140,11 +139,12 @@
                             <label for="telefono">Teléfono:</label>
                             <input type="tel" id="telefono" name="Telefono" required>
                         </div>
-
+            
                         <div class="form-group">
                             <label for="dia">Día y hora:</label>
                             <input type="date" id="fecha" name="Fecha" required>
                             <select id="hora">
+                                <option value="">Selecciona una hora</option>
                                 <!-- Horas medio día -->
                                 <option value="13:00">13:00</option>
                                 <option value="13:15">13:15</option>
@@ -180,20 +180,37 @@
                         
                             <input type="text" name="Hora" id="diaHora" readonly hidden>
                         </div>
-
+            
                         <div class="form-group">
-                        <label for="zona">Zona:</label>
-                        <select id="zona" required>
-                            <!-- Horas medio día -->
-                            <option value="Barra">Barra</option>
-                            <option value="Salon principal">Salón principal</option>
-                            <option value="Terraza">Terraza</option>
-                            <option value="Experiencia bodega">Experiencia bodega</option>
-                        </select>
-                    
-                        <input type="text" name="Zona" id="zonaReserva" readonly hidden>
-                        </div>
+                            <label for="zona">Zona:</label>
+                            <select id="zona" required>
+                                <option value="">Selecciona una zona</option>
+                                <option value="Barra">Barra</option>
+                                <option value="Salon principal">Salón principal</option>
+                                <option value="Terraza">Terraza</option>
+                                <option value="Experiencia bodega">Experiencia bodega</option>
+                            </select>
                         
+                            <input type="text" name="Zona" id="zonaReserva" readonly hidden>
+                        </div>
+            
+                        <!-- Campo de selección de mesa (aparece solo si se selecciona 'Salon principal') -->
+                        <div class="form-group" id="mesa-container" style="display:none;">
+                            <label for="mesa">Selecciona mesa:</label>
+                            <select id="mesa" name="Mesa">
+                                <option value="">Selecciona una mesa</option>
+                                <option value="Mesa 1" data-precio="100€">Mesa 1</option>
+                                <option value="Mesa 2" data-precio="100€">Mesa 2</option>
+                                <option value="Mesa 3" data-precio="100€">Mesa 3</option>
+                                <option value="Mesa 4" data-precio="120€">Mesa 4</option>
+                                <option value="Mesa 5" data-precio="120€">Mesa 5</option>
+                                <option value="Mesa 6" data-precio="120€">Mesa 6</option>
+                                <option value="Mesa 7" data-precio="120€">Mesa 7</option>
+                                <option value="Mesa VIP" data-precio="200€">Mesa VIP</option>
+                            </select>
+                            <p id="precio-mesa" style="display:none;">El precio de reservar la mesa seleccionada es: <span id="precio"></span></p>
+                        </div>
+            
                         <button type="submit">Enviar</button>
                     </fieldset>
                 </form>

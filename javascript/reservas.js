@@ -86,8 +86,6 @@ const inicializar = () => {
             document.getElementById('precio-mesa').style.display = 'none';
         }
     });
-    
-    
 
     // Función para actualizar el input con la fecha y hora seleccionadas
     function actualizarHoraYZona() {

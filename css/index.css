@@ -287,24 +287,86 @@ main{
     font-weight: bold;
 }
 
+#precio-mesa {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
 /************************************************************************/
-/*                    Parte del formulario reserva                      */
+/*                    Diseño de formulario reserva                      */
 /************************************************************************/
 
 .formulario-container {
-    width: 40%;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el formulario */
+    border: 2px solid var(--color-hover-botones);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar el formulario */
 }
 
-fieldset{
+fieldset {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 5px;;
+    gap: 15px;
+    border: none;
+    padding: 0;
 }
 
-legend{
-    color: var(--color-texto-principal);
+legend {
+    font-size: 24px;
     font-weight: bold;
+    color: var(--color-texto-principal);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333; /* Color para el texto de las etiquetas */
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--color-botones-destacados);
+    outline: none;
+    background-color: #fff;
+}
+
+button {
+    background-color: var(--color-botones-destacados); /* Ajusta según tu paleta de colores */
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid var(--color-hover-botones);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff6600; /* Color de hover ajustable */
 }
 
 /************************************************************************/
@@ -529,7 +591,23 @@ footer {
     }
 
     .formulario-container {
-        width: 100%;
+        width: 90%;
+        padding: 15px;
+    }
+
+    fieldset {
+        padding: 10px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
     }
 
     #map {

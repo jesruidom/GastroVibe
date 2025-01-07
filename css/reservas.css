@@ -209,13 +209,6 @@ nav a {
     background-color: #dd845b;
 }
 
-#precio-mesa {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-
 .cocina:hover, .mesa-redonda:hover, .mesa-cuadrada:hover {
     transform: scale(1.05);
 }
@@ -305,6 +298,12 @@ button {
 
 button:hover {
     background-color: #ff6600; /* Color de hover ajustable */
+}
+
+#precio-mesa {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /************************************************************************/

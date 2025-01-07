@@ -71,8 +71,35 @@ const inicializar = () => {
     // Referencia al input y al select
     const horaSelect = document.getElementById('hora');
     const zonaSelect = document.getElementById('zona');
+    const mesaContainer = document.getElementById('mesa-container');
     const diaHoraInput = document.getElementById('diaHora');
     const zonaInput  = document.getElementById('zonaReserva');
+
+    // Detectar cuando se cambia la zona
+    zonaSelect.addEventListener('change', function() {
+        console.log('Se ha seleccionado la zona: ', zonaSelect.value);
+        if (zonaSelect.value === 'Salon principal') {
+            mesaContainer.style.display = 'block'; // Muestra el campo de mesa
+        } else {
+            mesaContainer.style.display = 'none'; // Oculta el campo de mesa
+        }
+    });
+
+    document.getElementById('mesa').addEventListener('change', function() {
+        const mesaSeleccionada = this.options[this.selectedIndex];
+        const precio = mesaSeleccionada.getAttribute('data-precio');
+        
+        // Debugging: Verifica que el precio se captura correctamente
+        console.log('Mesa seleccionada:', mesaSeleccionada.value, 'Precio:', precio);
+        
+        // Muestra el precio solo si hay una mesa seleccionada
+        if (precio) {
+            document.getElementById('precio-mesa').style.display = 'block';
+            document.getElementById('precio').textContent = precio;
+        } else {
+            document.getElementById('precio-mesa').style.display = 'none';
+        }
+    });
 
     // Función para actualizar el input con la fecha y hora seleccionadas
     function actualizarHoraYZona() {
