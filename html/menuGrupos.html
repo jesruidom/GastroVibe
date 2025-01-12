@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GastroVibe - Especialidades</title>
+    <link rel="icon" href="/media/img/GastroVibe-logo-redondo.png" type="image/png">
+
+    <link rel="stylesheet" href="/css/menuGrupos.css">
+    <script src="/javascript/menuGrupos.js"></script>
+</head>
+<body onload="inicializar()">
+    <nav>
+        <ul class="menu-horizontal">
+            <li>
+                <a href="/html/index.html">
+                    <img src="/media/img/logo-gastro.PNG" alt="GastroVibe Logo" class="logo-menu">
+                </a>
+            </li>
+            <li>
+                <a href="/html/carta.html">
+                    <img src="/media/img/logo-menu.png" alt="Icono Carta" class="icono-menu">
+                    Carta
+                </a>
+            </li>
+            <li>
+                <a href="especialidades.html">
+                    <img src="/media/img/logo-especialidades.png" alt="Icono Especialidades" class="icono-menu">
+                    Especialidades
+                </a>
+                <ul class="menu-vertical">
+                    <li><a href="#">Especialidad 1</a></li>
+                    <li><a href="#">Especialidad 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="menuGrupos.html">
+                    <img src="/media/img/logo-menu-grupos.png" alt="Icono Menu Grupos" class="icono-menu">
+                    Menu para Grupos
+                </a>
+            </li>
+            <li>
+                <a href="reservas.html">
+                    <img src="/media/img/logo-reserva.png" alt="Icono Reservas" class="icono-menu">
+                    Reservas
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="contenido">
+        <main>
+            <!-- <h1>AÑADIR FUNCIONALIDAD DE PEDIR A DOMICILIO CALCULANDO EL PRECIO FINAL EN JAVASCRIPT</h1> -->
+            <div>
+                <h1>DISFRUTA DE LAS DOS ESPECIALIDADES MENÚ DEGUSTACIÓN</h1>
+                <p>En nuestro sitio, ofrecemos dos especialidades culinarias únicas que te harán disfrutar de una experiencia gastronómica inigualable. Nuestra especialidad española destaca por su auténtico sabor y la tradición de la cocina mediterránea, mientras que la especialidad asiática te sorprenderá con una mezcla de sabores exóticos y técnicas modernas. ¡Acompáñanos y explora estos deliciosos menús!</p>
+            </div>
+
+            <div class="contenedor-principal">
+                <div class="contenedor-1">
+                    <div class="menu-tradicional">
+                        <img src="/media/img/menu-tradicional.png" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                
+                    <!-- El div que contiene el menú, inicialmente oculto -->
+                    <div id="menu-tradicional" class="menu oculto">
+                        <div>
+                            <h3>Entrantes para compartir:</h3>
+                            <ul>
+                                <li>Jamón ibérico con pan de cristal.</li>
+                                <li>Croquetas caseras de jamón y pollo.</li>
+                                <li>Ensalada caprese con tomate, mozzarella y albahaca.</li>
+                            </ul>
+                
+                            <h3>Plato principal:</h3>
+                            <ul>
+                                <li>Solomillo de cerdo al horno con patatas panaderas.</li>
+                                <li>(Opcional para vegetarianos: Risotto de setas y espárragos).</li>
+                            </ul>
+                
+                            <p><b>Postre: </b>Tarta de queso con frutos rojos.<p>
+                
+                            <p><b>Bebidas: </b>Agua, refrescos, kombucha o limonada casera.<p>
+                        </div>
+                        
+                        <!-- El div que contiene el precio del menú, inicialmente oculto -->
+                        <div class="menu-precios">
+                            <h3>Precios menú:</h3>
+                            <ul>
+                                <li>Hasta 6 personas: <b>25 € por persona</b></li>
+                                <li>Hasta 10 personas: <b>22 € por persona</b></li>
+                                <li>Hasta 15 personas: <b>20 € por persona</b></li>
+                                <li>Más de 15 personas: <b>18 € por persona</b></li>
+                            </ul>                        
+                        </div>
+                
+                        <!-- Botón para redirigir a la página de reservas -->
+                        <div class="contenedor-btn">
+                            <button onclick="window.location.href='reservas.html'" class="btn-reserva">
+                                Reservar este menú
+                            </button>                            
+                        </div>
+                    </div>
+                
+                    <!-- Div oculto con la foto del plato -->
+                    <div id="foto-plato-tradicional" class="foto-plato oculto">
+                        <img src="/media/img/menu-tradicional-comida.jpg" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                </div>                
+    
+                <div class="contenedor-2">
+                    <div class="menu-mediterraneo">
+                        <img src="/media/img/menu-mediterraneo.png" alt="Imagen Menu Grupo mediterraneo">
+                    </div>
+                
+                    <!-- El div que contiene el menú, inicialmente oculto -->
+                    <div id="menu-mediterraneo" class="menu oculto">
+                        <div>
+                            <h3>Entrantes para compartir:</h3>
+                            <ul>
+                                <li>Hummus con crudités y pan pita.</li>
+                                <li>Totillitas de camarones.</li>
+                                <li>Tabla de quesos con frutos secos y mermelada.</li>
+                            </ul>
+                
+                            <h3>Plato principal:</h3>
+                            <ul>
+                                <li>Paella mixta de mariscos y pollo.</li>
+                                <li>(Opcional para vegetarianos: Lasaña de verduras al horno).</li>
+                            </ul>
+                
+                            <p><b>Postre: </b>Sorbete de limón al cava.<p>
+                
+                            <p><b>Bebidas: </b>Agua, refrescos, sangría o cerveza.<p>
+                        </div>
+                        
+                        <!-- El div que contiene el precio del menú, inicialmente oculto -->
+                        <div class="menu-precios">
+                            <h3>Precios menú:</h3>
+                            <ul>
+                                <li>Hasta 6 personas: <b>25 € por persona</b></li>
+                                <li>Hasta 10 personas: <b>22 € por persona</b></li>
+                                <li>Hasta 15 personas: <b>20 € por persona</b></li>
+                                <li>Más de 15 personas: <b>18 € por persona</b></li>
+                            </ul>                        
+                        </div>
+                
+                        <!-- Botón para redirigir a la página de reservas -->
+                        <div class="contenedor-btn">
+                            <button onclick="window.location.href='reservas.html'" class="btn-reserva">
+                                Reservar este menú
+                            </button>                            
+                        </div>
+                    </div>
+                
+                    <!-- Div oculto con la foto del plato -->
+                    <div id="foto-plato-mediterraneo" class="foto-plato oculto">
+                        <img src="/media/img/menu-mediterraneo-comida.jpg" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                </div>
+
+                <div class="contenedor-3">
+                    <div class="menu-gourmet">
+                        <img src="/media/img/menu-gourmet.png" alt="Imagen Menu Grupo gourmet">
+                    </div>
+                
+                    <!-- El div que contiene el menú, inicialmente oculto -->
+                    <div id="menu-gourmet" class="menu oculto">
+                        <div>
+                            <h3>Entrantes individuales:</h3>
+                            <ul>
+                                <li>Tartar de atún con aguacate.</li>
+                                <li>Ensalada templada de langostinos y mango.</li>
+                            </ul>
+                
+                            <h3>Plato principal:</h3>
+                            <ul>
+                                <li>Entrecot de ternera con salsa de setas.</li>
+                                <li>(Opcional para vegetarianos: Raviolis rellenos de ricotta y espinacas).</li>
+                            </ul>
+                
+                            <p><b>Postre: </b>Coulant de chocolate con helado de vainilla.<p>
+                
+                            <p><b>Bebidas: </b>Agua, refrescos, vino crianza o cava.<p>
+                        </div>
+                        
+                        <!-- El div que contiene el precio del menú, inicialmente oculto -->
+                        <div class="menu-precios">
+                            <h3>Precios menú:</h3>
+                            <ul>
+                                <li>Hasta 6 personas: <b>25 € por persona</b></li>
+                                <li>Hasta 10 personas: <b>22 € por persona</b></li>
+                                <li>Hasta 15 personas: <b>20 € por persona</b></li>
+                                <li>Más de 15 personas: <b>18 € por persona</b></li>
+                            </ul>                        
+                        </div>
+                
+                        <!-- Botón para redirigir a la página de reservas -->
+                        <div class="contenedor-btn">
+                            <button onclick="window.location.href='reservas.html'" class="btn-reserva">
+                                Reservar este menú
+                            </button>                            
+                        </div>
+                    </div>
+                
+                    <!-- Div oculto con la foto del plato -->
+                    <div id="foto-plato-gourmet" class="foto-plato oculto">
+                        <img src="/media/img/menu-gourmet-comida.jpeg" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                </div>
+
+                <div class="contenedor-4">
+                    <div class="menu-internacional">
+                        <img src="/media/img/menu-internacional.png" alt="Imagen Menu Grupo internacional">
+                    </div>
+                
+                    <!-- El div que contiene el menú, inicialmente oculto -->
+                    <div id="menu-internacional" class="menu oculto">
+                        <div>
+                            <h3>Entrantes para compartir:</h3>
+                            <ul>
+                                <li>Sushi variado (nigiris, makis y sashimis).</li>
+                                <li>Alitas de pollo al estilo BBQ.</li>
+                                <li>Nachos con guacamole y queso fundido.</li>
+                            </ul>
+                
+                            <h3>Plato principal:</h3>
+                            <ul>
+                                <li>Costillas a la brasa con salsa barbacoa y patatas rústicas.</li>
+                                <li>(Opcional para vegetarianos: Curry de garbanzos y verduras con arroz basmati).</li>
+                            </ul>
+                
+                            <p><b>Postre: </b>Tiramisú clásico.<p>
+                
+                            <p><b>Bebidas: </b>Agua, refrescos, cerveza o cóctel (mojito o piña colada).<p>
+                        </div>
+                        
+                        <!-- El div que contiene el precio del menú, inicialmente oculto -->
+                        <div class="menu-precios">
+                            <h3>Precios menú:</h3>
+                            <ul>
+                                <li>Hasta 6 personas: <b>25 € por persona</b></li>
+                                <li>Hasta 10 personas: <b>22 € por persona</b></li>
+                                <li>Hasta 15 personas: <b>20 € por persona</b></li>
+                                <li>Más de 15 personas: <b>18 € por persona</b></li>
+                            </ul>                        
+                        </div>
+                
+                        <!-- Botón para redirigir a la página de reservas -->
+                        <div class="contenedor-btn">
+                            <button onclick="window.location.href='reservas.html'" class="btn-reserva">
+                                Reservar este menú
+                            </button>                            
+                        </div>
+                    </div>
+                
+                    <!-- Div oculto con la foto del plato -->
+                    <div id="foto-plato-internacional" class="foto-plato oculto">
+                        <img src="/media/img/menu-internacional-comida.jpg" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                </div>
+
+                <div class="contenedor-5">
+                    <div class="menu-veggie">
+                        <img src="/media/img/menu-veggie.png" alt="Imagen Menu Grupo veggie">
+                    </div>
+                
+                    <!-- El div que contiene el menú, inicialmente oculto -->
+                    <div id="menu-veggie" class="menu oculto">
+                        <div>
+                            <h3>Entrantes para compartir:</h3>
+                            <ul>
+                                <li>Falafel con salsa de yogur.</li>
+                                <li>Bruschettas de tomate, albahaca y aguacate.</li>
+                                <li>Tempura de verduras con salsa de soja.</li>
+                            </ul>
+                
+                            <h3>Plato principal:</h3>
+                            <ul>
+                                <li>Burger vegetal con boniato frito.</li>
+                                <li>(Opcional: Poke bowl de quinoa, tofu y mango).</li>
+                            </ul>
+                
+                            <p><b>Postre: </b>Brownie vegano con helado de plátano.<p>
+                
+                            <p><b>Bebidas: </b>Agua, refrescos, kombucha o limonada casera.<p>
+                        </div>
+                        
+                        <!-- El div que contiene el precio del menú, inicialmente oculto -->
+                        <div class="menu-precios">
+                            <h3>Precios menú:</h3>
+                            <ul>
+                                <li>Hasta 6 personas: <b>25 € por persona</b></li>
+                                <li>Hasta 10 personas: <b>22 € por persona</b></li>
+                                <li>Hasta 15 personas: <b>20 € por persona</b></li>
+                                <li>Más de 15 personas: <b>18 € por persona</b></li>
+                            </ul>                        
+                        </div>
+                
+                        <!-- Botón para redirigir a la página de reservas -->
+                        <div class="contenedor-btn">
+                            <button onclick="window.location.href='reservas.html'" class="btn-reserva">
+                                Reservar este menú
+                            </button>                            
+                        </div>
+                    </div>
+                
+                    <!-- Div oculto con la foto del plato -->
+                    <div id="foto-plato-veggie" class="foto-plato oculto">
+                        <img src="/media/img/menu-veggie-comida.jpg" alt="Imagen Menu Grupo tradicional">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="contacto">
+            <address>
+                <p>Contáctanos: <a href="mailto:gastroviberestaurant@gmail.com">gastroviberestaurant@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+34684400245">+34 684 400 245</a></p>
+                <p>Dirección: <a href="https://maps.app.goo.gl/FD41w3UyNgueg9Sc6">C. José Gestoso, Casco Antiguo, 41003 Sevilla</a></p>
+            </address>
+        </div>
+        <div class="copyright">
+            <aside>2024 GastroVibe © Todos los derechos reservados - v2.1.12</aside>
+            <aside><a href="/html/politicaPrivacidad.html">Política de privacidad</a> | <a href="/html/avisoLegal.html">Aviso legal</a> | <a href="/html/cookies.html">Configuración de cookies</a></aside>
+        </div>
+
+        <div class="social">
+            <a href="https://instagram.com"><img src="/media/img/logo-instagram.png" alt="logo-instagram"></a>    
+            <a href="https://x.com"><img src="/media/img/logo-x.png" alt="logo-x"></a> 
+            <a href="https://facebook.com"><img src="/media/img/logo-facebook.png" alt="logo-facebook"></a>         
+        </div>
+    </footer>    
+
+</body>
+</html>
