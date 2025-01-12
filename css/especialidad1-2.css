@@ -143,11 +143,10 @@ nav a {
 
 main {
     display: flex;
+    flex-direction: column;
     gap: 15px; /* Reducir la separación entre los contenedores */
     justify-content: center; /* Centrar los contenedores horizontalmente */
-    flex-wrap: wrap; /* Permitir que los contenedores se apilen en pantallas pequeñas */
     width: 100%;
-    max-width: 1200px; /* Ancho máximo para el diseño */
     height: 100%;
 }
 
@@ -157,57 +156,48 @@ h1 {
     font-size: 1.7rem; /* Tamaño del texto */
 }
 
-.contenedor-1, .contenedor-2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 48%; /* Ajustar el ancho para hacer más grandes los contenedores */
-    text-align: center; /* Centrar el texto dentro de los contenedores */
-    flex-grow: 1; /* Permitir que se expandan proporcionalmente */
+.contenedor-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-auto-rows: auto; /* Altura de las filas basada en el contenido */
+    column-gap: 75px; /* Espaciado entre las columnas */
+    row-gap: 30px; /* Espaciado entre las filas */
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
 }
 
-.especialidad-1,
-.especialidad-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 5px;
+.item-imagen {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
 }
 
-.contenedor-1 img, .contenedor-2 img {
-    width: 100%; /* Asegurar que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantener la proporción de aspecto */
-    max-height: 350px; /* Límite uniforme para la altura */
-    aspect-ratio: 16 / 9; /* Mantener una proporción uniforme entre ancho y alto */
-    object-fit: cover; /* Ajustar la imagen para llenar el espacio */
-    border-radius: 5px; /* Añadir bordes redondeados opcionales */
+.item-imagen img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: 300px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen manteniendo su proporción */
+    border-radius: 4px; /* Mantén el borde redondeado */
 }
 
-.contenedor-1 img:hover, 
-.contenedor-2 img:hover{
+
+.item-imagen h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.item-imagen img:hover {
     cursor: pointer; /* Cambia el cursor a una mano */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
     transition: transform 0.3s ease; /* Suaviza el efecto */
 }
 
-
-/* Estilos adicionales para el menú cuando se muestra */
-#menu-espanol,
-#menu-asiatico {
-    margin-left: 20px;
-}
-
-#menu-espanol ul,
-#menu-asiatico ul {
-    margin: 5px 0 0 20px;
-    padding-left: 0;
-    list-style-position: inside;
-    text-align: left; /* Elimina el text-align: center solo para los elementos dentro del ul */
-}
-
-/* Ocultar el menú por defecto */
-.oculto {
-    display: none;
+.contenedor-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-reserva {
@@ -319,50 +309,11 @@ footer {
         font-size: var(--tamano-texto);
     }
 
-    .contenedor-1, .contenedor-2 {
-        max-width: 100%;
-    }
-
-    /* Asegúrate de que los contenedores se ajusten al diseño responsive */
-    .especialidad-1,
-    .especialidad-2 {
+    .contenedor-imagenes {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%; /* Ocupa todo el ancho disponible */
-        height: auto; /* Ajusta la altura proporcionalmente */
         gap: 10px;
     }
-
-    /* Estilo para las imágenes dentro de los contenedores */
-    .especialidad-1 img,
-    .especialidad-2 img {
-        width: 100%; 
-        height: auto; /* Mantiene la proporción original de la imagen */
-        object-fit: cover; /* Ajusta el contenido si la proporción es diferente */
-        max-width: 300px; /* Opcional: Establece un ancho máximo para limitar el tamaño */
-        border: 1px solid #ccc; 
-        border-radius: 5px; 
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
-    }
-
-    /* Ocultar el menú por defecto */
-    .oculto {
-        display: none;
-    }
-
-    /* Estilos adicionales para el menú cuando se muestra */
-    #menu-espanol,
-    #menu-asiatico {
-        margin-left: 20px;
-    }
-
-    #menu-espanol ul,
-    #menu-asiatico ul {
-        margin-left: 20px;
-    }
-
 
     footer {
         display: flex;
