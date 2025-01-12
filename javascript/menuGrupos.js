@@ -1,3 +1,13 @@
+const adjustImageSizes = () => {
+    document.querySelectorAll('.menu-tradicional, .menu-mediterraneo, .menu-gourmet, .menu-internacional, .menu-veggie').forEach(menu => {
+        if (!menu.classList.contains('oculto')) {
+            menu.querySelectorAll('img').forEach(img => {
+                img.style.width = '400px'; // Tamaño fijo al mostrar
+            });
+        }
+    });
+};
+
 const inicializar = () => {
     console.log('Cargada la página de menús para grupos');
 
@@ -27,16 +37,10 @@ const inicializar = () => {
     const fotoPlatoVeggie = document.querySelector("#foto-plato-veggie");
 
     // Inicialmente ocultar los menús y fotos
-    if (menuTradicional) menuTradicional.classList.add("oculto");
-    if (fotoPlatoEspanol) fotoPlatoEspanol.classList.add("oculto");
-    if (menuMediterraneo) menuMediterraneo.classList.add("oculto");
-    if (fotoPlatoMediterraneo) fotoPlatoMediterraneo.classList.add("oculto");
-    if (menuGourmet) menuGourmet.classList.add("oculto");
-    if (fotoPlatoGourmet) fotoPlatoGourmet.classList.add("oculto");
-    if (menuInternacional) menuInternacional.classList.add("oculto");
-    if (fotoPlatoInternacional) fotoPlatoInternacional.classList.add("oculto");
-    if (menuVeggie) menuVeggie.classList.add("oculto");
-    if (fotoPlatoVeggie) fotoPlatoVeggie.classList.add("oculto");
+    const menus = [menuTradicional, menuMediterraneo, menuGourmet, menuInternacional, menuVeggie];
+    const fotos = [fotoPlatoEspanol, fotoPlatoMediterraneo, fotoPlatoGourmet, fotoPlatoInternacional, fotoPlatoVeggie];
+    menus.forEach(menu => menu?.classList.add("oculto"));
+    fotos.forEach(foto => foto?.classList.add("oculto"));
 
     // Variables para el estado de visibilidad de los menús
     let menuTradicionalVisible = false;
@@ -52,9 +56,8 @@ const inicializar = () => {
             menuTradicional.classList.toggle("oculto", !menuTradicionalVisible);
             fotoPlatoEspanol.classList.toggle("oculto", !menuTradicionalVisible);
             console.log(menuTradicionalVisible ? "Menú español y foto del plato mostrados" : "Menú español y foto del plato ocultos");
+            adjustImageSizes();
         });
-    } else {
-        console.error("No se encontró el elemento .menu-tradicional, #menu-tradicional o #foto-plato");
     }
 
     // Mostrar/ocultar menú mediterráneo y su foto
@@ -64,9 +67,8 @@ const inicializar = () => {
             menuMediterraneo.classList.toggle("oculto", !menuMediterraneoVisible);
             fotoPlatoMediterraneo.classList.toggle("oculto", !menuMediterraneoVisible);
             console.log(menuMediterraneoVisible ? "Menú mediterráneo y foto del plato mostrados" : "Menú mediterráneo y foto del plato ocultos");
+            adjustImageSizes();
         });
-    } else {
-        console.error("No se encontró el elemento .menu-mediterraneo, #menu-mediterraneo o #foto-plato-mediterraneo");
     }
 
     // Mostrar/ocultar menú gourmet y su foto
@@ -76,9 +78,8 @@ const inicializar = () => {
             menuGourmet.classList.toggle("oculto", !menuGourmetVisible);
             fotoPlatoGourmet.classList.toggle("oculto", !menuGourmetVisible);
             console.log(menuGourmetVisible ? "Menú gourmet y foto del plato mostrados" : "Menú gourmet y foto del plato ocultos");
+            adjustImageSizes();
         });
-    } else {
-        console.error("No se encontró el elemento .menu-gourmet, #menu-gourmet o #foto-plato");
     }
 
     // Mostrar/ocultar menú internacional y su foto
@@ -88,9 +89,8 @@ const inicializar = () => {
             menuInternacional.classList.toggle("oculto", !menuInternacionalVisible);
             fotoPlatoInternacional.classList.toggle("oculto", !menuInternacionalVisible);
             console.log(menuInternacionalVisible ? "Menú internacional y foto del plato mostrados" : "Menú internacional y foto del plato ocultos");
+            adjustImageSizes();
         });
-    } else {
-        console.error("No se encontró el elemento .menu-internacional, #menu-internacional o #foto-plato");
     }
 
     // Mostrar/ocultar menú veggie y su foto
@@ -100,11 +100,11 @@ const inicializar = () => {
             menuVeggie.classList.toggle("oculto", !menuVeggieVisible);
             fotoPlatoVeggie.classList.toggle("oculto", !menuVeggieVisible);
             console.log(menuVeggieVisible ? "Menú veggie y foto del plato mostrados" : "Menú veggie y foto del plato ocultos");
+            adjustImageSizes();
         });
-    } else {
-        console.error("No se encontró el elemento .menu-veggie, #menu-veggie o #foto-plato");
     }
 };
 
 // Llamar a inicializar cuando la página haya cargado completamente
 document.addEventListener("DOMContentLoaded", inicializar);
+document.addEventListener("DOMContentLoaded", adjustImageSizes);

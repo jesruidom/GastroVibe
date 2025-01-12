@@ -447,6 +447,10 @@ footer {
         margin-top: 15px;;
     }
 
+    .foto-plato {
+        padding: 25px;
+    }
+
 
     footer {
         display: flex;
