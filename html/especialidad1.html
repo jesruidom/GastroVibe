@@ -7,8 +7,9 @@
     <link rel="icon" href="/media/img/GastroVibe-logo-redondo.png" type="image/png">
 
     <link rel="stylesheet" href="/css/especialidad1-2.css">
+    <script src="/javascript/especialidad1-2.js"></script>
 </head>
-<body>
+<body onload="inicializar()">
     <nav>
         <ul class="menu-horizontal">
             <li>
@@ -101,6 +102,13 @@
                 <button onclick="window.location.href='reservas.html'" class="btn-reserva">
                     Reservar este menú
                 </button>                            
+            </div>
+
+            <!-- Modal para pantalla completa -->
+            <div id="modal-imagen" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="imagen-modal">
+                <div id="caption"></div>
             </div>
         </main>
     </div>
