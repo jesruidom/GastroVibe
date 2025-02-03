@@ -23,9 +23,9 @@ html, body {
 
 body {
     background-image: url(/media/img/fondo.jpg);
-    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-    background-position: center; /* Centra la imagen en la pantalla */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     color: var(--color-texto-principal);
     display: flex;
     flex-direction: column;
